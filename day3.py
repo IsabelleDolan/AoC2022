@@ -17,8 +17,6 @@ uppercase_letters_list = [ch for ch in string.ascii_uppercase]
 
 def get_priority(input_letter): #input will be shared_letter
 	if input_letter.islower():
-		#check to see which letter it lines up with
-		#get (index+1) to get the priority
 		index = lowercase_letters_list.index(input_letter)
 		points = index + 1
 	
@@ -31,8 +29,6 @@ def get_priority(input_letter): #input will be shared_letter
 
 def return_priority_sum(input_file):
 	with open(input_file, "r") as file:
-
-		priority_sum = 0
 
 		for line in file: 
 			line = line.strip()
@@ -70,16 +66,10 @@ def return_badge_sum(input_file):
 		counter = 0
 		three_lines = []
 		badge_sum = 0
-		priority_sum = 0
-
 		lines = [line.strip() for line in file]
 
 		for line in lines:
-			#print(line)
-
 			line_as_set = set(line)
-			#print(line_as_set)
-
 			three_lines.append(line_as_set)
 
 			counter += 1
@@ -89,23 +79,19 @@ def return_badge_sum(input_file):
 			#get the priority of the char and add it to sum 
 			#reset the counter to 0 and list to empty once we read 3 lines  
 			if counter == 3:
-				#print(three_lines)
 				line1 = three_lines[0]
 				line2 = three_lines[1]
 				line3 = three_lines[2]
 
 				shared_letter = line1.intersection(line2, line3)
-				#print(shared_letter)
 
 				#convert to list
 				shared_letter = list(shared_letter)
 				# Use the join method to concatenate the elements of the list into a string
 				shared_letter_as_string = "".join(shared_letter)
-				#print(shared_letter_as_string)
 
 				#now to calculate badge priorities (aka points) 
 				priority = get_priority(str(shared_letter_as_string))
-				#print(priority)
 
 				badge_sum = badge_sum + priority
 
@@ -115,9 +101,7 @@ def return_badge_sum(input_file):
 	return badge_sum
 
 
-
 data = './data3.txt'
-
 
 #task1
 final_priority_sum = return_priority_sum(data)
