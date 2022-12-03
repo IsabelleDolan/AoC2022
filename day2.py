@@ -1,6 +1,7 @@
 import numpy as np
 
-# Opening file
+# this code only solves the second task 
+
 data = open('./data2.txt', 'r')
 
 #score for the shape you selected:
@@ -36,8 +37,6 @@ lose_points = 0
 draw_points = 3
 win_points = 6
 
-#10835
-#11164
 
 def calculate_points(a,b):
 	score = 0
@@ -76,30 +75,8 @@ for line in data:
 	print(point)
 	total_points = total_points + point
 
-
 print(total_points)
+#10835 answer to 2
 	
-
-
-	
-#print(total_points)     
-
 data.close()
-
-
-'''
-	for letter in line:
-		if line == '/n':
-			print('empty line')
-		else:
-			print('letter: ' + letter)
-
-	elf_hand = data.read(1)
-	my_hand = data.read(2)
-	#print(my_hand)
-	#if elf_hand =='A':
-		#print(elf_hand)
-	#if my_hand == ' X':
-		#print(my_hand)
-'''
 
